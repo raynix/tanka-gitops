@@ -3,7 +3,7 @@
 {
   _config+:: {
     runner+: {
-      image: "raynix/github-runner-tanka:v0.2",
+      image: "raynix/github-runner-tanka:v0.3",
     }
   }
 }
