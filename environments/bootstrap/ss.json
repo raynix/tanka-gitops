@@ -1,0 +1,27 @@
+{
+  "ss": {
+    "kind": "SealedSecret",
+    "apiVersion": "bitnami.com/v1alpha1",
+    "metadata": {
+      "name": "runner",
+      "namespace": "tanka",
+      "creationTimestamp": null
+    },
+    "spec": {
+      "template": {
+        "metadata": {
+          "name": "runner",
+          "namespace": "tanka",
+          "creationTimestamp": null
+        }
+      },
+      "encryptedData": {
+        "GITHUB_TOKEN": "AgBVd6YYCCNKC6U/bSmC1+AthNmr8Iwhx3Dud+HSZ9nE5OjrnKRimyYz9n8YqByls1Z39MgmttI8oEthqhvz0v8/rYaI4Fe2MKMYgTT93wsqy4795/Cuq+WtUrbkZj6LmF4xgnQbyalY4t+e/k3ELU9z6RlNfkZmn84lR3yXhMJZd/JO04NkhfLaCwwejUc6Opis7CHwzVfj27mL5lHN3zCeOvdrx8hHuCKbFfYHThhB6qRV0bD86BRB+yWXvYAsAtiQ9V/pJDMs6L10PyyPM27ZpkKHGKVCB0jBqooctX1F3eLPWlR77MLxZzZ3u08wWjxlO6JYkylEUvzUcl1R1pcWtF62g3/wXpL8xKeg6O5XlY39rmcsAOrJ2jW3KSA8fm4YL6AuScbWh/mDE8+o0/MRey3bn/wIgn2LxJ36+DzQ02MHoUouBR6fUq3FEz306h+fP0RBlpNB8exuJZ5v8fEmiNKKizgTL7/VWsnXTBiE/ykE9IQzJUuiUz72W7dd+MiLxPzTB8d2tOmklGJoqqicMmfea+TKDvudECW+UIVrY4RKyL4hlOjhP5dSXL8W+y+zumkEKfxKF7loXM7O+RhPmKvPdduYz5tykMLhYImDpdo88LF8McBnZG6C2ecBW9jvDfwBVy734Egau1IycUiW/WBE4lHQ3vTcm3lfdCuPKe/SSM41PwR+2apMT1p/+z2Ox4ExxwhmLP6ViCAIx7vcLOlcTlXIt4WFZ8G6ug==",
+        "GITHUB_URL": "AgCKDsHiJ/wPlBcac8KpSIGbr75RZsE01FOUM8nZEVuN1EfQj/p/eezO6VZsq+iLZqTGII61oaHdhd4G1B3ojGrf2Bd9KhErO9rwpSH+ENGrdxPOw+epNeQItrkUJ/w4RouGXxcqm58ncLkNmseHENu6aatDqT8hHG0/MnmbkkuLZdgFlQK9F6dP0Dy728fttTh03s+HY7j3fKRCncBUWhU4JdOiaKrGQXYbGjP6dmsqPL+A/WOiDDUjbItOWMSdJAM2bXAxyrGv0pHTsNk8txS+13u1sCO9iQisIBUxFln3k7LuGZYapsoDQKEzMYWWTzXNmmNK+kDLKMnepDQ0v0EVltLSY6oGoSHbTi3CmogL3Jhk+kztNkttGWnFTdkmtifnA31/b9oUAiiis+Xd+90EIhqlq4BySfIVWY66FclzPxLfKyf570lVjjBvAUsOSYzZuwtCcuE2Rp84VspoRnTdLOiqWlVaY/QjqOswayv/u9YwT5hBezrB57lSktC8wF8DK1Dfc7HaO82ZSLyfmwKFCu+kJuDRS8ytZpB2ti+hXQ3AqJHzb/c+hAoasiGJpLq6k8gnpyP0H8H73jqL3x7m3uYxJ01T+cGl7PMzu0C6MxXXtiT/xAWBCId1z09ZMyMaZCfRC3Kd37caOf/VJ/qZVCmkbVGYKw7snuJO5XXpuETgJbeEnYACOQ8RKTm+K1wRkXIQSQlxmkNZ+NRwDFoCF3u49yf31TC2E36n3P8YyFN0JWrIYw=="
+      }
+    },
+    "status": {
+
+    }
+  }
+}
