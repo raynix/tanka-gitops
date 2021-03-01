@@ -27,4 +27,5 @@ jobs:
 
       - name: deploy utils
         run: |
-          tk apply --force environments/default
+          tk show environments/default/ --dangerous-allow-redirect \
+            |kubectl apply -f -
