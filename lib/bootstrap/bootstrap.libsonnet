@@ -11,9 +11,6 @@
   local namespace = $.core.v1.namespace,
   local deployment = $.apps.v1.deployment,
   local container = $.core.v1.container,
-  local port = $.core.v1.containerPort,
-  local service = $.core.v1.service,
-  local secret = $.core.v1.secret,
 
   runner: {
     clusterRoleBinding: clusterRoleBinding.new()
