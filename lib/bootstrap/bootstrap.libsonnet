@@ -24,8 +24,8 @@
         namespace: 'tanka'
       }
     )
-    + clusterRoleBinding.mixin.roleRef.withKind("ClusterRole").withName("admin").withApiGroup("rbac.authorization.k8s.io")
-    + clusterRoleBinding.mixin.metadata.withName("admin"),
+    + clusterRoleBinding.mixin.roleRef.withKind("ClusterRole").withName("cluster-admin").withApiGroup("rbac.authorization.k8s.io")
+    + clusterRoleBinding.mixin.metadata.withName("tanka-admin"),
 
     namespace: namespace.new("tanka"),
 
