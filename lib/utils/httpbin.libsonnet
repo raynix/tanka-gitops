@@ -12,17 +12,44 @@
   local container = $.core.v1.container,
   local port = $.core.v1.containerPort,
   local service = $.core.v1.service,
-  local c = $._config,
+  local ingress = $.networking.v1beta1.ingress,
+  local c = $._config.httpbin,
 
   httpbin: {
     deployment: deployment.new(
-      name=c.httpbin.name,
+      name=c.name,
       replicas=1,
       containers=[
-        container.new(c.httpbin.name, c.httpbin.image)
-        + container.withPorts([port.new(c.httpbin.name, c.httpbin.port)]),
+        container.new(c.name, c.image)
+        + container.withPorts([port.new(c.name, c.port)])
+        + $.util.resourcesRequests("100m", "100Mi")
+        + $.util.resourcesLimits("500m", "500Mi")
+        + container.mixin.livenessProbe.httpGet.withPath("/").withPort(c.port)
+        + container.mixin.readinessProbe.httpGet.withPath("/").withPort(c.port),
       ],
     ),
+
     service: $.util.serviceFor(self.deployment),
+
+    ingress: ingress.new()
+      + ingress.mixin.metadata.withName(c.name)
+      + ingress.mixin.spec.withRules(
+          {
+            host: "httbin.awes.one",
+            http: {
+              paths: [
+                {
+                  path: "/",
+                  backend: {
+                    serviceName: c.name,
+                    servicePort: c.port
+                  }
+                }
+              ]
+
+            }
+
+          }
+        )
   },
 }
