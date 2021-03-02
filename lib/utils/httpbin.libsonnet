@@ -33,6 +33,7 @@
 
     ingress: ingress.new()
       + ingress.mixin.metadata.withName(c.name)
+      + ingress.mixin.metadata.withAnnotations({ "kubernetes.io/ingress.class": "prod" })
       + ingress.mixin.spec.withRules(
           {
             host: "httpbin.awes.one",
