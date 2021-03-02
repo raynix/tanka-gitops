@@ -35,7 +35,7 @@
       + ingress.mixin.metadata.withName(c.name)
       + ingress.mixin.spec.withRules(
           {
-            host: "httbin.awes.one",
+            host: "httpbin.awes.one",
             http: {
               paths: [
                 {
