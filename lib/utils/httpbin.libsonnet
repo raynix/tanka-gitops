@@ -27,7 +27,17 @@
         + container.mixin.livenessProbe.httpGet.withPath("/").withPort(c.port)
         + container.mixin.readinessProbe.httpGet.withPath("/").withPort(c.port),
       ],
-    ),
+    )
+    + deployment.mixin.spec.template.spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.withNodeSelectorTerms(
+      {
+        matchExpressions: [{
+          key: "kubernetes.io/arch",
+          operator: "In",
+          values: [
+            "amd64",
+          ]
+        }]
+      }),
 
     service: $.util.serviceFor(self.deployment),
 
