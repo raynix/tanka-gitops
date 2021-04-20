@@ -8,6 +8,29 @@ local util(k) = {
     if map[key] != null
   ],
 
+  ingressHelper(host_name, service_name, service_port)::
+    local ingress = k.networking.v1beta1.ingress;
+
+    ingress.new()
+      + ingress.mixin.metadata.withName("ingress-" + service_name)
+      + ingress.mixin.metadata.withAnnotations({ "kubernetes.io/ingress.class": "prod" })
+      + ingress.mixin.spec.withRules(
+          {
+            host: host_name,
+            http: {
+              paths: [
+                {
+                  path: "/",
+                  backend: {
+                    serviceName: service_name,
+                    servicePort: service_port
+                  }
+                }
+              ]
+            }
+          }
+        ),
+
   // serviceFor create service for a given deployment.
   serviceFor(deployment, ignored_labels=[], nameFormat='%(container)s-%(port)s')::
     local container = k.core.v1.container;
